@@ -1,25 +1,20 @@
 import parser from 'yargs-parser';
 import chalk from 'chalk';
-import errobj from 'errobj';
 import errline from './lib/errline';
 import get from './lib/get';
+import run from './lib/run';
 import logger from './lib/logger';
 import {
 	describes,
 	errors,
 	its,
 } from './lib/things';
+import { HOOKS } from './lib/constants';
 
 const [, , ...rest] = process.argv;
 const { _: files, require: required } = parser(rest);
 
 const { green, red, bold, yellow } = chalk;
-const HOOKS = [
-	'before',
-	'beforeEach',
-	'afterEach',
-	'after',
-];
 const hooks = Object.assign(
 	{},
 	...HOOKS.map(
@@ -40,27 +35,6 @@ Object.assign(
 		hook => ({ [hook]: fn => hooks[hook].push(fn) })
 	)
 );
-
-let current;
-
-process.on('unhandledRejection', error => {
-	errors.push(
-		errobj(error, {origin: current, name: 'Un-handled Error'})
-	);
-});
-
-async function run(name, fn) {
-	current = name;
-	try {
-		await fn();
-		logger.info(green(` ✔︎ ${name}`));
-	} catch (error) {
-		logger.info(red(` ✘ ${name}`));
-		errors.push(
-			errobj(error, {origin: name})
-		);
-	}
-}
 
 (async() => {
 	try {

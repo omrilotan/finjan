@@ -37,6 +37,7 @@ Create a scope with `describe` and register tests with `it`
 Additional methods:
 
 | Method | Meaning
+| - | -
 | `before` | Runs before all `it`s in a `describe`
 | `beforeEach` | Runs before each `it` in a `describe`
 | `afterEach` | Runs after each `it` in a `describe`
