@@ -1,0 +1,17 @@
+{
+	"extends": "@omrilotan",
+	"parser": "babel-eslint",
+	"overrides": [
+		{
+			"files": [ "test.mjs" ],
+			"globals": {
+				"describe": true,
+				"it": true,
+				"before": true,
+				"beforeEach": true,
+				"after": true,
+				"afterEach": true
+			}
+		}
+	]
+}

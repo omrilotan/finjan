@@ -1,0 +1,4 @@
+.*
+*.log
+spec.mjs
+test.mjs

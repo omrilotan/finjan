@@ -1,0 +1,30 @@
+defaults: &defaults
+  working_directory: ~/app
+  docker:
+    - image: circleci/node:12
+
+version: 2.1
+jobs:
+  cyclic:
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm i
+      - run:
+          name: Run tests
+          command: echo "not running tests yet"
+      - run:
+          name: Lint code
+          command: npm run lint -- --plugin log
+      - run:
+          name: Publish
+          command: npx published
+
+workflows:
+  version: 2.1
+  oncommit:
+    jobs:
+      - cyclic:
+          context: globalenv

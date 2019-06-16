@@ -1,0 +1,44 @@
+{
+  "name": "finjan",
+  "version": "0.0.0-alpha.3a",
+  "description": "☕️ Just test harmony modules",
+  "keywords": [
+    "test",
+    "spec",
+    "mjs",
+    "es6",
+    "esm",
+    "harmony",
+    "modules",
+    "☕️"
+  ],
+  "author": "omrilotan",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omrilotan/mono.git"
+  },
+  "homepage": "https://omrilotan.com/mono/finjan/",
+  "publishConfig": {
+  	"tag": "next"
+  },
+  "bin": "bin.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "bin.js test.mjs",
+    "lint": "eslint '*.js' '*.mjs' '**/*.mjs'"
+  },
+  "dependencies": {
+    "async-execute": "^1.1.0",
+    "chalk": "^2.4.2",
+    "errobj": "^2.0.0",
+    "yargs-parser": "^13.1.1"
+  },
+  "devDependencies": {
+    "@lets/wait": "^1.0.0",
+    "@omrilotan/eslint-config": "0.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-log": "^1.2.2"
+  }
+}
