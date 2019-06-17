@@ -20,7 +20,7 @@
   },
   "homepage": "https://omrilotan.com/mono/finjan/",
   "publishConfig": {
-  	"tag": "next"
+    "tag": "next"
   },
   "bin": "bin.js",
   "type": "commonjs",
@@ -32,6 +32,7 @@
     "async-execute": "^1.1.0",
     "chalk": "^2.4.2",
     "errobj": "^2.0.0",
+    "glob": "^7.1.4",
     "yargs-parser": "^13.1.1"
   },
   "devDependencies": {

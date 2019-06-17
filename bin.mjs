@@ -1,9 +1,9 @@
-import parser from 'yargs-parser';
-import chalk from 'chalk';
-import errline from './lib/errline';
+import args from './lib/args';
+import { red, bold } from './lib/colours';
 import get from './lib/get';
 import run from './lib/run';
 import logger from './lib/logger';
+import summarise from './lib/summarise';
 import {
 	describes,
 	errors,
@@ -11,10 +11,12 @@ import {
 } from './lib/things';
 import { HOOKS } from './lib/constants';
 
-const [, , ...rest] = process.argv;
-const { _: files, require: required } = parser(rest);
+const {
+	files,
+	required,
+	verbose,
+} = args(process.argv);
 
-const { green, red, bold, yellow } = chalk;
 const hooks = Object.assign(
 	{},
 	...HOOKS.map(
@@ -67,22 +69,7 @@ Object.assign(
 			}
 		}
 
-		logger.info('');
-		const color = errors.length ? red : green;
-		logger.info(color(`Finished with ${errors.length} errors`));
-
-		if (errors.length) {
-			logger.info(
-				...errors.map(
-					({name, origin, message, fileName, lineNumber, columnNumber}) => [
-						red.bold(name),
-						`${bold('in')}: ${red.bold(origin)}`,
-						`${bold('at')}: ${yellow([fileName, lineNumber, columnNumber].join(':'))}`,
-						message,
-					].filter(Boolean).map(errline).join('\n')
-				)
-			);
-		}
+		logger.info(summarise(errors, {verbose}));
 
 		process.exit(errors.length);
 	} catch (error) {

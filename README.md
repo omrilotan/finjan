@@ -7,7 +7,7 @@
 ![](assets/finjan.svg)
 
 ```
-finjan file.mjs another-file.mjs --require finjan.mjs
+finjan **/spec.mjs
 ```
 
 Pass in filenames to import as tests.
@@ -16,7 +16,8 @@ Pass in filenames to import as tests.
 
 | name | Value
 | - | -
-| require | one or more files to import before the tests
+| require (r) | one or more files to import before the tests
+| verbose (v) | Print stack trace for each error
 
 ### Structure of spec/tests file
 
