@@ -2,8 +2,11 @@
 
 const { join } = require('path');
 const execute = require('async-execute');
+const { name, version } = require('./package.json');
 
 const [, , ...rest] = process.argv;
+
+console.log(`${name}, ${version}`);
 
 execute([
 	'node',

@@ -36,7 +36,6 @@ describe('another finjan test run', () => {
 	});
 });
 
-
 async function asyncError() {
 	await wait(40);
 	throw new Error('Something must have gone terribly wrong');

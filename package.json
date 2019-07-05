@@ -1,6 +1,6 @@
 {
   "name": "finjan",
-  "version": "0.0.0-alpha.3a",
+  "version": "0.0.0-alpha.4a",
   "description": "☕️ Just test harmony modules",
   "keywords": [
     "test",
@@ -25,7 +25,7 @@
   "bin": "bin.js",
   "type": "commonjs",
   "scripts": {
-    "test": "bin.js test.mjs",
+    "test": "bin.js tests/*.mjs",
     "lint": "eslint '*.js' '*.mjs' '**/*.mjs'"
   },
   "dependencies": {
