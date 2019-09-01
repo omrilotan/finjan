@@ -10,6 +10,11 @@
 finjan **/spec.mjs
 ```
 
+All the things
+```
+finjan **/spec.mjs --require .finjan.mjs --ignore **/node_modules/** --verbose
+```
+
 Pass in filenames to import as tests.
 
 ### Options
@@ -18,6 +23,7 @@ Pass in filenames to import as tests.
 | - | -
 | require (r) | one or more files to import before the tests
 | verbose (v) | Print stack trace for each error
+| ignore (i) | Pattern or an array of glob patterns to exclude matches
 
 ### Structure of spec/tests file
 

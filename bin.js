@@ -2,11 +2,14 @@
 
 const { join } = require('path');
 const execute = require('async-execute');
+const { bold } = require('chalk');
 const { name, version } = require('./package.json');
 
 const [, , ...rest] = process.argv;
 
-console.log(`${name}, ${version}`);
+console.log(
+	`${bold(name)}, ${version}`
+);
 
 execute([
 	'node',

@@ -10,6 +10,7 @@ import errors from './lib/errors';
 const {
 	files,
 	required,
+	ignore,
 	verbose,
 } = args(process.argv);
 
@@ -17,9 +18,9 @@ const {
 	try {
 		required && await import(await get(required));
 
-		await foreach(await get(files), register);
+		await foreach(await get(files, { ignore }), register);
 
-		logger.info(summarise(errors, {verbose}));
+		logger.info(summarise(errors, { verbose }));
 
 		process.exit(errors.length);
 	} catch (error) {
