@@ -30,7 +30,6 @@ describe('my suit', function() {
 		assert.equal(await square(2), 4);
 	});
 });
-
 ```
 
 Create a scope with `describe` and register tests with `it`

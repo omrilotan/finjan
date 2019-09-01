@@ -37,9 +37,9 @@
   },
   "devDependencies": {
     "@lets/wait": "^1.0.0",
-    "@omrilotan/eslint-config": "0.0.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.16.0",
-    "eslint-plugin-log": "^1.2.2"
+    "@omrilotan/eslint-config": "^1.1.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.3.0",
+    "eslint-plugin-log": "^1.2.3"
   }
 }
