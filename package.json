@@ -31,7 +31,7 @@
   "dependencies": {
     "async-execute": "^1.1.0",
     "chalk": "^3.0.0",
-    "errobj": "^2.0.0",
+    "errobj": "^2.1.0",
     "glob": "^7.1.4",
     "yargs-parser": "^16.1.0"
   },

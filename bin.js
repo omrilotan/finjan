@@ -8,7 +8,7 @@ const { name, version } = require('./package.json');
 const [, , ...rest] = process.argv;
 
 console.log(
-	`${bold(name)}, ${version}`
+	`${bold(name)}, ${version}`,
 );
 
 execute([
