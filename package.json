@@ -1,0 +1,40 @@
+{
+  "name": "finjan",
+  "description": "🍵 Command line utility that logs fast.com results at a set interval to a local CSV file",
+  "version": "1.0.7",
+  "keywords": [
+    "🍵",
+    "internet-speed",
+    "csv"
+  ],
+  "author": "omrilotan",
+  "license": "UNLICENSE",
+  "homepage": "https://omrilotan.com/finjan/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omrilotan/finjan.git"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "type": "module",
+  "bin": {
+    "finjan": "./bin.js"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --sourcemap",
+    "prestart": "npm run build",
+    "start": "./bin.js",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.8",
+    "prettier": "^3.3.3",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "puppeteer": "^23.6.0",
+    "stdline": "^1.1.1"
+  }
+}
